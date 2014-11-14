@@ -1,8 +1,8 @@
 define(function() {
-   
-    return { 
-        DBName: 'tasksDB', 
+
+    return {
+        DBName: 'tasksDB',
         StoreName: 'tasks'
     };
-    
+
 });

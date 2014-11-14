@@ -1,6 +1,6 @@
-module.exports = function ( grunt ) {
+module.exports = function(grunt) {
 
-    grunt.initConfig( {
+    grunt.initConfig({
         connect: {
             server: {
                 options: {
@@ -11,11 +11,17 @@ module.exports = function ( grunt ) {
                 }
             }
         },
+        "jsbeautifier": {
+            files: ["**/*.js", '!node_modules/**'],
+            options: {
+                jsbeautifyrc: '.jsbeautifyrc'
+            }
+        },
         handlebars: {
             compile: {
                 files: {
-                    'templates/TaskList.js': [ 'templates/TaskList.hbs' ], 
-                    'templates/AddEditTask.js': [ 'templates/AddEditTask.hbs' ]
+                    'templates/TaskList.js': ['templates/TaskList.hbs'],
+                    'templates/AddEditTask.js': ['templates/AddEditTask.hbs']
                 }
             },
             options: {
@@ -23,10 +29,11 @@ module.exports = function ( grunt ) {
                 amd: true
             }
         }
-    } );
+    });
 
-    grunt.loadNpmTasks( 'grunt-contrib-connect' );
-    grunt.loadNpmTasks( 'grunt-contrib-handlebars' );
+    grunt.loadNpmTasks('grunt-jsbeautifier');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-handlebars');
 
-    grunt.registerTask( 'default', [ 'handlebars' ] );
+    grunt.registerTask('default', ['handlebars', 'jsbeautifier']);
 };
