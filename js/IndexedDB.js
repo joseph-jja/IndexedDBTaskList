@@ -64,8 +64,14 @@ define( function () {
             }
         };
 
+        // open and create do the same thing :/
         SQLQuery.prototype.createDB = function ( name, version, callback ) {
-
+            this.open(name, version, callback);
+        };
+        
+        SQLQuery.prototype.createObjectStore = function ( name, keypath, callback ) {
+            var request = this.iDB.createObjectStore(name, keypath);
+            processRequest(this, request, callback);
         };
 
         SQLQuery.prototype.destroyDB = function () {

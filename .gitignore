@@ -1,1 +1,2 @@
 templates/*.js
+node_modules/**
