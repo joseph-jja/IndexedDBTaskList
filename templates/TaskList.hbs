@@ -1,0 +1,27 @@
+<div>
+    <button id="addTaskID">Add Task</button>
+    <select id="filterDisplay">
+        <option value="week">Week</option>
+        <option value="month">Month</option>
+        <option value="working">Still Working On</option>
+        <option selected="selected" value="all">All</option>
+    </select>
+    <table id="taskList">
+        <tr>
+            <th>Edit</th>
+            <th>Short Description</th>
+            <th>Long Description</th>
+            <th>Last Access Date</th>
+            <th>Status</th>
+        </tr>
+        {{#each taskListItem}}
+        <tr>
+            <td><button id="task-{{this.value.id}}">Edit ({{this.value.id}})</button></td>
+            <td>{{this.value.short_description}}</td>
+            <td>{{this.value.long_description}}</td>
+            <td nowrap>{{this.value.work_date}}</td>
+            <td>{{#if this.value.completed}}Done{{else}}Working{{/if}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
