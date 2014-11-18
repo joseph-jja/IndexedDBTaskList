@@ -16,7 +16,7 @@
         </tr>
         {{#each taskListItem}}
         <tr>
-            <td><button id="task-{{this.value.id}}">Edit ({{this.value.id}})</button></td>
+            <td><button class="edit-task" id="task-{{this.value.id}}">Edit ({{this.value.id}})</button></td>
             <td>{{this.value.short_description}}</td>
             <td>{{this.value.long_description}}</td>
             <td nowrap>{{this.value.work_date}}</td>
