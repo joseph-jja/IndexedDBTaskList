@@ -1,4 +1,4 @@
-(function() {
+( function () {
 
     var paths = {
         jquery: 'libs/jquery-1.11.1',
@@ -21,7 +21,7 @@
             exports: 'Handlebars'
         },
         backbone: {
-            deps: ['underscore', 'jquery'],
+            deps: [ 'underscore', 'jquery' ],
             exports: 'Backbone'
         },
         underscore: {
@@ -29,9 +29,9 @@
         }
     };
 
-    require.config({
+    require.config( {
         paths: paths,
         shim: shims
-    });
+    } );
 
-})();
+} )();

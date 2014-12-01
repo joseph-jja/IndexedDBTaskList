@@ -1,8 +1,8 @@
-define(function() {
+define( function () {
 
     return {
         DBName: 'tasksDB',
         StoreName: 'tasks'
     };
 
-});
+} );
