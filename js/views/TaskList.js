@@ -76,9 +76,11 @@ define( [ 'jquery', 'backbone' ], function ( $, Backbone ) {
             if ( selectedValue === 'week' ) {
                 time = 7 * 24 * 60 * 60 * 1000;
                 day.setTime( day.getTime() - time );
+                day.setHours(0);
             } else if ( selectedValue === 'month' ) {
                 time = 30 * 24 * 60 * 60 * 1000;
                 day.setTime( day.getTime() - time );
+                day.setHours(0);
             }
 
             $( "#taskList tr" ).each( function ( idx, x ) {
