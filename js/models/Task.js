@@ -12,7 +12,8 @@ define( [ 'jquery', 'backbone', 'indexedDB', 'constants' ], function ( $, Backbo
         //},
         sync: function ( method, model, options ) {
             var cb = function () {},
-                data = {}, self = this;
+                data = {},
+                self = this;
             if ( typeof options !== 'undefined' ) {
                 if ( options[ 'id' ] ) {
                     self.set( {
@@ -55,7 +56,7 @@ define( [ 'jquery', 'backbone', 'indexedDB', 'constants' ], function ( $, Backbo
                 data[ "short_description" ] = this.get( "short_description" );
                 data[ "long_description" ] = this.get( "long_description" );
                 data[ "completed" ] = this.get( "completed" );
-                data[ 'id' ] = (+this.get( 'id' ));
+                data[ 'id' ] = ( +this.get( 'id' ) );
 
                 this.indexedDB.update( Constants.StoreName, ( +this.get( 'id' ) ), data, function ( evt, err ) {
                     cb( evt, err );
