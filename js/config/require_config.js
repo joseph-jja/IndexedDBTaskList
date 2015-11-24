@@ -2,7 +2,7 @@
 
     var paths = {
         jquery: 'libs/jquery-1.11.1',
-        handlebars: 'libs/handlebars-v1.3.0',
+        handlebars: 'libs/handlebars-v4.0.5',
         backbone: 'libs/backbone',
         underscore: 'libs/underscore',
         taskList: '/js/views/TaskList',
